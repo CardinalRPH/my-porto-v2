@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 // --- Impor React Icons ---
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 // -------------------------
+import demoImg from '../assets/preview.png'
 
 const HeroBanner: React.FC = () => {
   const textRef = useRef([]);
@@ -79,7 +80,7 @@ const HeroBanner: React.FC = () => {
             ref={imageRef}
             className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-teal-500 shadow-2xl transition duration-500 hover:shadow-teal-500/50"
           >
-            
+            <img src={demoImg} alt="" />
           </div>
         </div>
       </div>
