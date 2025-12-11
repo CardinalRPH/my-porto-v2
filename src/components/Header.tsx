@@ -1,49 +1,21 @@
-import React, { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+// src/components/Header.tsx
+import React from 'react';
 
 const Header: React.FC = () => {
-  const headerRef = useRef(null);
-
-  useEffect(() => {
-    // Animasi GSAP saat komponen dimuat (fade in dan sedikit turun)
-    gsap.fromTo(
-      headerRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-    );
-  }, []);
-
-  const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#footer' },
-  ];
-
   return (
-    <header
-      ref={headerRef}
-      className="sticky top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-blur-sm shadow-lg border-b border-gray-700"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-teal-400">
-              {'<Developer/>'}
-            </a>
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-teal-400 transition duration-300 font-medium tracking-wider"
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
+    <header className="py-6 px-4 sm:px-6 lg:px-8 bg-gray-800">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo/Inisial */}
+        <div className="text-3xl font-bold text-yellow-500">
+          <span className="p-2 border-2 border-yellow-500 rounded-full inline-block">D</span>
         </div>
+
+        {/* Navigasi */}
+        <nav className="space-x-8 hidden sm:flex">
+          <a href="#" className="text-white hover:text-yellow-500 transition duration-300">Services</a>
+          <a href="#" className="text-white opacity-60 hover:opacity-100 transition duration-300">Works</a>
+          <a href="#" className="text-white opacity-60 hover:opacity-100 transition duration-300">Blog</a>
+        </nav>
       </div>
     </header>
   );

@@ -1,91 +1,67 @@
-import React, { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-// --- Impor React Icons ---
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-// -------------------------
-import demoImg from '../assets/preview.png'
+// src/components/Hero.tsx
+import React from 'react';
 
-const HeroBanner: React.FC = () => {
-  const textRef = useRef([]);
-  const imageRef = useRef(null);
-  const socialRef = useRef(null); 
+// Anda mungkin perlu antarmuka untuk properti jika komponen ini menerima data
+// interface HeroProps {}
 
-  const addToRefs = (el: never) => {
-    if (el && !textRef.current.includes(el)) {
-      textRef.current.push(el);
-    }
-  };
-
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
-    // Animasi
-    tl.fromTo(imageRef.current, { x: 100, opacity: 0, scale: 0.8 }, { x: 0, opacity: 1, scale: 1, duration: 1.2 });
-    textRef.current.forEach((el, _index) => {
-      tl.fromTo(el, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, `<-0.4`);
-    });
-    tl.fromTo(socialRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '<0.3');
-  }, []);
-
+const Hero: React.FC = () => {
   return (
-    <section id="hero" className="bg-gray-900 min-h-screen flex items-center justify-center pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-        {/* Teks Deskripsi */}
-        <div className="md:w-1/2 text-white mb-10 md:mb-0">
-          <p ref={addToRefs} className="text-xl text-teal-400 mb-2 font-mono">
-            Halo, saya adalah
-          </p>
-          <h1 ref={addToRefs} className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
-            [Nama Anda]
-          </h1>
-          <h2 ref={addToRefs} className="text-3xl md:text-4xl text-gray-300 font-light mb-6">
-            Full-Stack Developer & Tech Enthusiast
-          </h2>
-          <p ref={addToRefs} className="text-lg text-gray-400 max-w-lg mb-8">
-            Deskripsi singkat: **Saya adalah seorang programmer dengan passion dalam membangun aplikasi web yang skalabel dan efisien.** Berpengalaman dengan ekosistem modern **JavaScript/TypeScript** dan fokus pada solusi performa tinggi.
-          </p>
-          
-          <div ref={socialRef} className="flex space-x-4 items-center">
-             <a
-                href="#projects"
-                className="inline-block px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-500 transition duration-300 transform hover:scale-105 shadow-xl"
-            >
-                Lihat Proyek Saya
-            </a>
-            {/* Tombol Sosial LinkedIn */}
-            <a
-              href="[Link LinkedIn Anda]"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-3xl text-gray-400 hover:text-teal-400 transition duration-300 transform hover:scale-110"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn />
-            </a>
-            {/* Tombol Sosial GitHub */}
-            <a
-              href="[Link GitHub Anda]"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-3xl text-gray-400 hover:text-teal-400 transition duration-300 transform hover:scale-110"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
-          </div>
+    <section className="py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* Kolom Kiri: Nama dan Gambar */}
+      <div>
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-4">
+          Carlos
+          <br />
+          Mendoza.
+        </h1>
+        <hr className="w-16 border-t-4 border-yellow-500 mb-8" />
+        
+        {/* Ikon Sosial Media (Placeholder) */}
+        <div className="flex space-x-4 text-white text-lg mt-8">
+          <a href="#" className="opacity-70 hover:opacity-100 transition duration-300">
+            <i className="fab fa-twitter"></i> {/* Ganti dengan ikon yang sesuai */}
+          </a>
+          <a href="#" className="opacity-70 hover:opacity-100 transition duration-300">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="#" className="opacity-70 hover:opacity-100 transition duration-300">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
         </div>
-
-        {/* Gambar Orang */}
-        <div className="md:w-1/2 flex justify-center">
-          <div
-            ref={imageRef}
-            className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-teal-500 shadow-2xl transition duration-500 hover:shadow-teal-500/50"
-          >
-            <img src={demoImg} alt="" />
-          </div>
+      </div>
+      
+      {/* Kolom Kanan: Deskripsi dan Foto */}
+      <div className="relative">
+        {/* Konten Teks di Atas Foto */}
+        <div className="mb-12">
+          <p className="text-sm text-yellow-500 mb-2">— Introduction</p>
+          <h2 className="text-3xl font-semibold mb-4">
+            Product Designer and <br />
+            Developer, based in <br />
+            California.
+          </h2>
+          <p className="text-gray-400 max-w-sm mb-6">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+          </p>
+          <a href="#" className="text-yellow-500 flex items-center group">
+            My story 
+            <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+        
+        {/* Placeholder untuk Gambar */}
+        {/* Gambar harus diletakkan di dalam folder 'public' atau diimpor */}
+        <div className="absolute top-0 right-0 w-full h-full md:relative md:w-auto md:h-auto">
+             <img 
+                src="path/to/carlos-mendoza.png" // Ganti dengan path gambar yang benar
+                alt="Carlos Mendoza" 
+                className="w-full h-auto object-cover rounded-lg shadow-2xl" 
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0% 100%)' }} // Efek potong miring opsional
+            />
         </div>
       </div>
     </section>
   );
 };
 
-export default HeroBanner;
+export default Hero;

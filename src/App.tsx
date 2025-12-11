@@ -1,20 +1,29 @@
+// src/App.tsx (Pembaruan Akhir)
 import React from 'react';
 import Header from './components/Header';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
-import HeroBanner from './components/Hero';
+import Hero from './components/Hero';
+import StatsAndServices from './components/StatsAndServices';
+import PortfolioSection from './components/PortfolioSection'; 
+import BlogAndTestimonial from './components/BlogAndTestimonial'; 
+import CtaFooterSection from './components/CtaFooterSection'; // Impor yang baru
 
 const App: React.FC = () => {
   return (
-    <div className="bg-gray-900 min-h-screen text-white">
+    <div className="min-h-screen bg-gray-800 text-white font-sans">
       <Header />
-      <main>
-        <HeroBanner />
-        <Skills />
-        <Projects />
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Hero />
       </main>
-      <Footer />
+      
+      <StatsAndServices />
+      
+      <PortfolioSection /> 
+      
+      <BlogAndTestimonial /> 
+      
+      {/* Tambahkan CTA / Footer Section di sini */}
+      <CtaFooterSection /> 
+
     </div>
   );
 };
