@@ -3,7 +3,7 @@ import React from 'react';
 
 const CtaFooterSection: React.FC = () => {
   return (
-    <footer className="bg-gray-800 pt-20 pb-12">
+    <footer className="bg-gray-700 pt-20 pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* === Bagian Atas: CTA dan Formulir === */}

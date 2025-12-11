@@ -6,6 +6,7 @@ import StatsAndServices from './components/StatsAndServices';
 import PortfolioSection from './components/PortfolioSection'; 
 import BlogAndTestimonial from './components/BlogAndTestimonial'; 
 import CtaFooterSection from './components/CtaFooterSection'; // Impor yang baru
+import TechStack from './components/TechStack';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const App: React.FC = () => {
       </main>
       
       <StatsAndServices />
-      
+      <TechStack/>
       <PortfolioSection /> 
       
       <BlogAndTestimonial /> 

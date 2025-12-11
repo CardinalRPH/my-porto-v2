@@ -37,7 +37,7 @@ const BlogItem: React.FC<BlogPostProps> = ({ date, title, category }) => {
 
 const BlogAndTestimonial: React.FC = () => {
   return (
-    <section className="bg-gray-700 py-20">
+    <section className="bg-gray-800 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* === Bagian Atas: Blog/News === */}
