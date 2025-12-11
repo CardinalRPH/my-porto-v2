@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard';
 
 import cpsc2 from "../assets/projects/crop-sq2.jpg"
 import permatasq4 from "../assets/projects/permata-sq1.jpg"
+import SubTitle from './SubTitle';
 
 const PortfolioSection: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const PortfolioSection: React.FC = () => {
         {/* === Bagian Kiri: Judul dan Deskripsi === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-1">
-            <p className="text-sm text-yellow-500 mb-2">— Portfolio</p>
+            <SubTitle>Portfolio</SubTitle>
             <h2 className="text-5xl font-extrabold leading-tight mb-4">
               All Creative Works, <br />
               Selected projects.
