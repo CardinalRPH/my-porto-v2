@@ -1,5 +1,6 @@
 // src/components/BlogAndTestimonial.tsx
 import React from 'react';
+import JourneyItem from './JourneyItem';
 
 // Tipe data untuk Postingan Blog
 interface BlogPostProps {
@@ -13,6 +14,24 @@ const blogPosts: BlogPostProps[] = [
   { date: 'Feb 26', title: 'Let this be a lesson to you', category: 'Blog' },
   { date: 'Feb 14', title: 'How do you use time tracking for projects?', category: 'Blog' },
   { date: 'Feb 9', title: 'Ego and empathy in design', category: 'Blog' },
+];
+
+const jobHistory = [
+    {
+        startDate: 'Aug 2023',
+        endDate: 'Present',
+        company: 'HSBC',
+        role: 'Web Administrator',
+        summary: 'Fokus pada administrasi sistem web dan keandalan operasional untuk lingkungan perbankan yang aman.'
+    },
+    {
+        startDate: 'Mar 2022',
+        endDate: 'Jul 2023',
+        company: 'Onanmedia International',
+        role: 'Full Stack Developer',
+        summary: 'Pengalaman mendalam dalam pengembangan web full-stack menggunakan JavaScript, Node.js, dan React.'
+    },
+    // ... lainnya
 ];
 
 // Komponen untuk setiap Baris Blog
@@ -35,7 +54,7 @@ const BlogItem: React.FC<BlogPostProps> = ({ date, title, category }) => {
   );
 };
 
-const BlogAndTestimonial: React.FC = () => {
+const Journey: React.FC = () => {
   return (
     <section className="bg-gray-800 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,8 +73,8 @@ const BlogAndTestimonial: React.FC = () => {
 
           {/* Kolom Kanan: Daftar Postingan */}
           <div className="space-y-2">
-            {blogPosts.map((post, index) => (
-              <BlogItem key={index} {...post} />
+            {jobHistory.map((item, index)=> (
+              <JourneyItem {...item} key={index} />
             ))}
           </div>
 
@@ -107,4 +126,4 @@ const BlogAndTestimonial: React.FC = () => {
   );
 };
 
-export default BlogAndTestimonial;
+export default Journey;

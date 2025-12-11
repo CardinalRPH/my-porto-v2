@@ -1,6 +1,6 @@
-const SubTitle = ({children}:{children:string})=> {
+const SubTitle = ({ children, className }: { children: string, className?: string }) => {
     return (
-        <h4 className="text-xl text-yellow-500 mb-2 content-item">— {children}</h4>
+        <h4 className={`text-xl text-yellow-500 mb-2 content-item ${className}`}>— {children}</h4>
     )
 }
 

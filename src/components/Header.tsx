@@ -18,12 +18,12 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="py-6 px-4 sm:px-6 lg:px-8 bg-gray-800 sticky top-0 z-50">
+    <header className="py-6 px-4 sm:px-6 lg:px-8 bg-zinc-700 sticky top-0 z-50">
       <div className="container mx-auto flex justify-end items-center">
         
         {/* Tombol Hamburger (Hanya Tampil di Mobile) */}
         <button 
-          className="sm:hidden text-white text-xl p-2 z-60"
+          className={`sm:hidden text-white text-xl p-2 z-60 ${isMenuOpen ?  'opacity-0 pointer-events-none':'opacity-100'}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
 
       {/* Panel Sidebar Sesungguhnya */}
       <div 
-        className={`fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-2xl z-50 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 w-64 h-full bg-zinc-900 shadow-2xl z-50 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="p-6">
           
