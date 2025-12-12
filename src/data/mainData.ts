@@ -3,8 +3,11 @@ import { CgMonday } from "react-icons/cg";
 import { FaConfluence, FaGitAlt, FaJsSquare, FaReact, FaTrello } from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiArduino, SiDotnet, SiExpress, SiJira, SiMui, SiMysql, SiNextdotjs, SiPostgresql, SiSharp, SiTailwindcss, SiTypescript } from "react-icons/si";
-import cpsc2 from "../assets/projects/crop-sq2.jpg"
-import permatasq4 from "../assets/projects/permata-sq1.jpg"
+
+import permatasq1 from "../assets/projects/permata-sq1.jpg"
+import cropsq2 from "../assets/projects/crop-sq2.jpg"
+import verticalGsq3 from "../assets/projects/smart-vertical-garden-sq3.jpg"
+import presensisq4 from "../assets/projects/presensi-asisten-sq4.jpg"
 
 const mainData = {
     core: [
@@ -28,28 +31,28 @@ const mainData = {
             category: "Branding, Product",
             linkText: "Residential Proxy Server",
             className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
-            imgageURI: cpsc2
+            imgageURI: permatasq1
         },
         {
             title: "Seone.",
             category: "Product, Development",
             linkText: "Analytics Overview",
             className: "col-span-2 md:col-span-1 h-[600px] mt-0 md:mt-16 bg-gray-900",
-            imgageURI: permatasq4
+            imgageURI: cropsq2
         },
         {
             title: "Energetic Tumbler.",
             category: "Product, Development",
             linkText: "Dark Midnight",
             className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
-            imgageURI: cpsc2
+            imgageURI: verticalGsq3
         },
         {
             title: "Energetic Tumbler.",
             category: "Product, Development",
             linkText: "Dark Midnight",
-            className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
-            imgageURI: permatasq4
+            className: "col-span-2 md:col-span-1 h-[600px] mt-0 md:mt-16 bg-gray-900",
+            imgageURI: presensisq4
         },
     ],
     techStack: [

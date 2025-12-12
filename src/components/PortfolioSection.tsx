@@ -55,7 +55,7 @@ const PortfolioSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-gray-700 py-20">
+    <section ref={sectionRef} className="bg-zinc-800 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* === Bagian Kiri: Judul dan Deskripsi === */}
