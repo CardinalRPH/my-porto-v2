@@ -1,39 +1,9 @@
-// Tipe data untuk Proyek Portfolio
-interface ProjectCardProps {
-    title: string;
-    category: string;
-    linkText: string;
-    className: string; // Untuk kontrol tata letak grid
-    imageStyle?: React.CSSProperties; // Untuk meniru efek perspektif gambar
-    imgageURI?: string
-}
-
-// Data Proyek (Placeholder)
-// const projectsData: ProjectCardProps[] = [
-//     {
-//         title: 'BeServer.',
-//         category: 'Branding, Product',
-//         linkText: 'Residential Proxy Server',
-//         className: 'col-span-1 md:col-span-1 h-[400px]',
-//     },
-//     {
-//         title: 'Seone.',
-//         category: 'Product, Development',
-//         linkText: 'Analytics Overview',
-//         className: 'col-span-1 md:col-span-1 h-[400px] mt-8 md:mt-16', // Geser ke bawah
-//     },
-//     {
-//         title: 'Energetic Tumbler.',
-//         category: 'Product, Development',
-//         linkText: 'Dark Midnight',
-//         className: 'col-span-1 md:col-span-1 h-[400px]',
-//     },
-// ];
+import type { ProjectCardProps } from "../types/dataTypes";
 
 // Komponen untuk setiap Kartu Proyek
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, linkText, className, imageStyle, imgageURI }) => {
     return (
-        <div className={`relative bg-gray-900 overflow-hidden ${className}`}>
+        <div className={`relative bg-gray-900 overflow-hidden project-card ${className}`}>
             {/* Konten Teks di Sudut */}
             <div className="absolute top-8 left-8 text-white z-10">
                 <h3 className="text-2xl font-bold mb-1">{title}</h3>

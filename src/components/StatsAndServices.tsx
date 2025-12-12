@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import SubTitle from './SubTitle';
+import mainData from '../data/mainData';
+import StatsCard from './StatsCard';
 
 const StatsAndServices: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -99,26 +101,9 @@ const StatsAndServices: React.FC = () => {
             </h2>
 
             <div className="space-y-6 text-gray-300">
-              <div className="border-l-4 border-yellow-500 pl-4 left-col-item">
-                <span className="font-bold text-white block text-lg">Full Stack Development (Front-End & Back-End)</span>
-                <p className="text-sm mt-1 text-gray-400">
-                  Expert in building scalable, responsive web applications using the modern JavaScript ecosystem (React/Next.js) combined with robust C#/.NET and Node.js back-ends.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-yellow-500 pl-4 left-col-item">
-                <span className="font-bold text-white block text-lg">IoT Engineering</span>
-                <p className="text-sm mt-1 text-gray-400">
-                  Focus on embedded systems development (Arduino/microcontrollers), secure sensor data acquisition, and maintaining reliable network communication for interconnected devices.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-yellow-500 pl-4 left-col-item">
-                <span className="font-bold text-white block text-lg">Web Administrator & System Reliability</span>
-                <p className="text-sm mt-1 text-gray-400">
-                  Dedicated to maintaining system integrity, security, and peak performance, ensuring zero-downtime deployments and optimal infrastructure health.
-                </p>
-              </div>
+              {mainData.core.map((service, index) => (
+                <StatsCard {...service} key={index} />
+              ))}
             </div>
 
             <a href="#" className="text-yellow-500 flex items-center group font-medium mt-6 left-col-item">

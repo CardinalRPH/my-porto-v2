@@ -3,9 +3,55 @@ import { CgMonday } from "react-icons/cg";
 import { FaConfluence, FaGitAlt, FaJsSquare, FaReact, FaTrello } from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiArduino, SiDotnet, SiExpress, SiJira, SiMui, SiMysql, SiNextdotjs, SiPostgresql, SiSharp, SiTailwindcss, SiTypescript } from "react-icons/si";
+import cpsc2 from "../assets/projects/crop-sq2.jpg"
+import permatasq4 from "../assets/projects/permata-sq1.jpg"
 
 const mainData = {
-    project: [],
+    core: [
+        {
+            title: "Web Administrator & System Reliability",
+            desc: "Dedicated to maintaining system integrity, security, and peak performance, ensuring zero-downtime deployments and optimal infrastructure health."
+        },
+        {
+            title: "Full Stack Development (Front-End & Back-End)",
+            desc: "Expert in building scalable, responsive web applications using the modern JavaScript ecosystem (React/Next.js) combined with robust C#/.NET and Node.js back-ends."
+        },
+        {
+            title: "IoT Engineering",
+            desc: "Focus on embedded systems development (Arduino/microcontrollers), secure sensor data acquisition, and maintaining reliable network communication for interconnected devices."
+        },
+
+    ],
+    project: [
+        {
+            title: "BeServer.",
+            category: "Branding, Product",
+            linkText: "Residential Proxy Server",
+            className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
+            imgageURI: cpsc2
+        },
+        {
+            title: "Seone.",
+            category: "Product, Development",
+            linkText: "Analytics Overview",
+            className: "col-span-2 md:col-span-1 h-[600px] mt-0 md:mt-16 bg-gray-900",
+            imgageURI: permatasq4
+        },
+        {
+            title: "Energetic Tumbler.",
+            category: "Product, Development",
+            linkText: "Dark Midnight",
+            className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
+            imgageURI: cpsc2
+        },
+        {
+            title: "Energetic Tumbler.",
+            category: "Product, Development",
+            linkText: "Dark Midnight",
+            className: "col-span-2 md:col-span-1 h-[600px] bg-gray-900",
+            imgageURI: permatasq4
+        },
+    ],
     techStack: [
         {
             name: 'React',
