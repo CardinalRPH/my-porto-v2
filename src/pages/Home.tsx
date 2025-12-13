@@ -68,7 +68,7 @@ const Home = () => {
             <Journey />
 
             {/* Tambahkan CTA / Footer Section di sini */}
-            <CtaFooterSection errors={errors} onSubmit={handleSubmit(submitForm)} register={register} />
+            <CtaFooterSection errors={errors} onSubmit={handleSubmit(submitForm)} register={register} email={mainData.profile.email} />
             <EmailStatusModal isOpen={isModalOpen} onClose={closeModal} status={modalStatus} />
 
         </div>

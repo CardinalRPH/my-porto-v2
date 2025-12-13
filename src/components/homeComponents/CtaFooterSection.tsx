@@ -6,7 +6,7 @@ import FormField from './FormField';
 import type { DataFormProps } from '../../types/formTypes';
 import type { FieldErrors, UseFormRegister } from 'react-hook-form';
 
-const CtaFooterSection = ({ onSubmit, errors, register }: { onSubmit: FormEventHandler<HTMLFormElement>, errors: FieldErrors<DataFormProps>, register: UseFormRegister<DataFormProps> }) => {
+const CtaFooterSection = ({ onSubmit, errors, register, email }: { onSubmit: FormEventHandler<HTMLFormElement>, errors: FieldErrors<DataFormProps>, register: UseFormRegister<DataFormProps>, email: string }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
 
@@ -87,8 +87,8 @@ const CtaFooterSection = ({ onSubmit, errors, register }: { onSubmit: FormEventH
             <p className="text-gray-400 max-w-xs mb-8 cta-text-item">
               Ready to collaborate or just want to chat about technology? Feel free to reach out and connect!
             </p>
-            <a href="mailto:rayhanfebriyan62@gmail.com" className="text-yellow-500 flex items-center group font-medium text-lg cta-text-item">
-              rayhanfebriyan62@gmail.com
+            <a href={`mailto:${email}`} className="text-yellow-500 flex items-center group font-medium text-lg cta-text-item">
+              {email}
               <span className="ml-2 transition-transform group-hover:translate-x-1"><FaArrowRight /></span>
             </a>
           </div>

@@ -71,7 +71,7 @@ const Profile: React.FC = () => {
                             </div>
                             <div className="flex items-center text-gray-300">
                                 <FaEnvelope className="text-yellow-500 mr-3" />
-                                <span>Email: {mainData.profile.email}</span>
+                                <span><a href={`mailto:${mainData.profile.email}`} className='hover:text-yellow-500 active:text-yellow-600 duration-75 ease-in fa'>{mainData.profile.email}</a></span>
                             </div>
                         </div>
                     </div>
