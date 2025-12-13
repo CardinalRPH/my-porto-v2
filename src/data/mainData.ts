@@ -228,7 +228,7 @@ const mainData = {
         name: "Rayhan Febriyan Saputra",
         description: "Web Administrator with a computer science background, experienced in managing enterprise web systems, CI/CD pipelines (Jenkins–Maven), Java-based deployments, and IoT-driven solutions, with prior full-stack experience building scalable APIs, responsive web applications, and real-time systems.",
         from: "Jakarta, Indonesia",
-        email: "rayhan.febriyan@example.com",
+        email: "rayhanfebriyan62@gmail.com",
         profileImage: "/path/to/your/profile-photo.jpg",
         social: {
             instagram: "https://www.instagram.com/_reean",

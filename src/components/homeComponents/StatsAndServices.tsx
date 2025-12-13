@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import SubTitle from './SubTitle';
-import mainData from '../../data/mainData';
 import StatsCard from './StatsCard';
 import { FaArrowRight } from 'react-icons/fa';
+import type { CoreType } from '../../types/dataTypes';
 
-const StatsAndServices: React.FC = () => {
+const StatsAndServices = ({ coreData }: { coreData: CoreType[] }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const StatsAndServices: React.FC = () => {
             </h2>
 
             <div className="space-y-6 text-gray-300">
-              {mainData.core.map((service, index) => (
+              {coreData.map((service, index) => (
                 <StatsCard {...service} key={index} />
               ))}
             </div>

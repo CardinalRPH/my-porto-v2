@@ -1,7 +1,7 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
-import mainData from "../data/mainData"
+import type { SocialType } from "../types/dataTypes"
 
-const Footer = () => {
+const Footer = ({ socialHub }: { socialHub: SocialType }) => {
     return (
 
         <footer className="flex flex-col bg-zinc-800 pb-12 items-center justify-center pt-10 border-t border-gray-700 footer-bottom">
@@ -10,13 +10,13 @@ const Footer = () => {
 
             {/* Ikon Sosial Media */}
             <div className="flex space-x-4 text-white text-lg mt-2">
-                <a href={mainData.profile.social.github} className="opacity-70 hover:opacity-100 transition duration-300">
+                <a href={socialHub.github} className="opacity-70 hover:opacity-100 transition duration-300">
                     <FaGithub />
                 </a>
-                <a href={mainData.profile.social.instagram} className="opacity-70 hover:opacity-100 transition duration-300">
+                <a href={socialHub.instagram} className="opacity-70 hover:opacity-100 transition duration-300">
                     <FaInstagram />
                 </a>
-                <a href={mainData.profile.social.linkedin} className="opacity-70 hover:opacity-100 transition duration-300">
+                <a href={socialHub.linkedin} className="opacity-70 hover:opacity-100 transition duration-300">
                     <FaLinkedin />
                 </a>
             </div>

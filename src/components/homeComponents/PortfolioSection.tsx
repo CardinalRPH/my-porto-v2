@@ -1,12 +1,12 @@
 // src/components/PortfolioSection.tsx (FINAL dengan GSAP ScrollTrigger)
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 import ProjectCard from './ProjectCard';
 import SubTitle from './SubTitle';
-import mainData from '../../data/mainData';
+import type { ProjectCardProps } from '../../types/dataTypes';
 
-const PortfolioSection: React.FC = () => {
+const PortfolioSection = ({ projectData }: { projectData: ProjectCardProps[] }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const PortfolioSection: React.FC = () => {
           {/* === Bagian Kanan: Grid Proyek === */}
           {/* Tambahkan class 'projects-grid' */}
           <div className="md:col-span-2 grid grid-cols-2 gap-6 projects-grid">
-            {mainData.project.map((items, index) => (
+            {projectData.map((items, index) => (
               <ProjectCard {...items} key={index} />
             ))}
           </div>

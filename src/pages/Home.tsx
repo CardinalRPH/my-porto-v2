@@ -58,12 +58,12 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-zinc-700 text-white font-sans">
             <main className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Hero />
+                <Hero name={mainData.profile.name} socialHub={mainData.profile.social} />
             </main>
 
-            <StatsAndServices />
+            <StatsAndServices coreData={mainData.core} />
             <TechStack data={mainData.techStack} />
-            <PortfolioSection />
+            <PortfolioSection projectData={mainData.project} />
 
             <Journey />
 

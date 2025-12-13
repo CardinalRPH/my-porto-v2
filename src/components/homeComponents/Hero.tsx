@@ -1,13 +1,13 @@
 // src/components/Hero.tsx
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { FaArrowRight, FaGithubSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import SubTitle from './SubTitle';
 import { Link } from 'react-router-dom';
-import mainData from '../../data/mainData';
+import type { SocialType } from '../../types/dataTypes';
 // import demoImg from "../assets/preview.png"
 
-const Hero: React.FC = () => {
+const Hero = ({ name, socialHub }: { name: string, socialHub: SocialType }) => {
     const heroRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -65,20 +65,20 @@ const Hero: React.FC = () => {
 
             <div className='z-20'>
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-4 overflow-hidden">
-                    {mainData.profile.name.split(" ").map((item, index) => (
+                    {name.split(" ").map((item, index) => (
                         <span className="block hero-name-line" key={index}>{item}</span>
                     ))}
                 </h1>
                 <hr className="w-16 border-t-4 border-yellow-500 mb-8 divider-line" />
 
                 <div className="flex space-x-4 text-white text-lg mt-8 content-item">
-                    <a href={mainData.profile.social.github} className="opacity-70 hover:opacity-100 transition duration-300">
+                    <a href={socialHub.github} className="opacity-70 hover:opacity-100 transition duration-300">
                         <FaGithubSquare size={"2em"} />
                     </a>
-                    <a href={mainData.profile.social.linkedin} className="opacity-70 hover:opacity-100 transition duration-300">
+                    <a href={socialHub.linkedin} className="opacity-70 hover:opacity-100 transition duration-300">
                         <FaLinkedin size={"2em"} />
                     </a>
-                    <a href={mainData.profile.social.instagram} className="opacity-70 hover:opacity-100 transition duration-300">
+                    <a href={socialHub.instagram} className="opacity-70 hover:opacity-100 transition duration-300">
                         <FaInstagram size={"2em"} />
                     </a>
                 </div>

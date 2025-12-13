@@ -3,13 +3,8 @@ import React from 'react';
 import type { ProjectCardProps } from "../../types/dataTypes";
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-// Sesuaikan interface untuk memasukkan link tujuan
-interface EnhancedProjectCardProps extends ProjectCardProps {
-    projectLink: string; // Tautan ke proyek
-}
-
 // Komponen untuk setiap Kartu Proyek
-const ProjectCard: React.FC<EnhancedProjectCardProps> = ({
+const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     category,
     linkText,
