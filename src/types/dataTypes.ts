@@ -11,7 +11,10 @@ export type CoreType = {
 
 export type ProjectCardProps = {
     title: string;
-    category: string;
+    category: {
+          icon: React.ElementType;
+    color: string;
+    }[];
     linkText: string;
     className: string;
     imageStyle?: React.CSSProperties;

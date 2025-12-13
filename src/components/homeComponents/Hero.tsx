@@ -1,8 +1,10 @@
 // src/components/Hero.tsx
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { FaArrowRight, FaGithubSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import SubTitle from './SubTitle';
+import { Link } from 'react-router-dom';
+import mainData from '../../data/mainData';
 // import demoImg from "../assets/preview.png"
 
 const Hero: React.FC = () => {
@@ -63,17 +65,21 @@ const Hero: React.FC = () => {
 
             <div className='z-20'>
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-4 overflow-hidden">
-                    <span className="block hero-name-line">Carlos</span>
-                    <span className="block hero-name-line">Mendoza.</span>
+                    {mainData.profile.name.split(" ").map((item, index) => (
+                        <span className="block hero-name-line" key={index}>{item}</span>
+                    ))}
                 </h1>
                 <hr className="w-16 border-t-4 border-yellow-500 mb-8 divider-line" />
 
                 <div className="flex space-x-4 text-white text-lg mt-8 content-item">
-                    <a href="#" className="opacity-70 hover:opacity-100 transition duration-300">
+                    <a href={mainData.profile.social.github} className="opacity-70 hover:opacity-100 transition duration-300">
                         <FaGithubSquare size={"2em"} />
                     </a>
-                    <a href="#" className="opacity-70 hover:opacity-100 transition duration-300">
+                    <a href={mainData.profile.social.linkedin} className="opacity-70 hover:opacity-100 transition duration-300">
                         <FaLinkedin size={"2em"} />
+                    </a>
+                    <a href={mainData.profile.social.instagram} className="opacity-70 hover:opacity-100 transition duration-300">
+                        <FaInstagram size={"2em"} />
                     </a>
                 </div>
             </div>
@@ -83,17 +89,22 @@ const Hero: React.FC = () => {
                 <div className="mb-12">
                     <SubTitle>Introduction</SubTitle>
                     <h2 className="text-3xl font-semibold mb-4 content-item">
-                        Product Designer and <br />
-                        Developer, based in <br />
-                        California.
+                        Web Administrator, <br />
+                        Fullstack Developer, <br />
+                        and Web Enthusiast, <br />
+                        based in Jakarta.
                     </h2>
                     <p className="text-gray-400 max-w-sm mb-6 content-item">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+                        A Web Developer and Administrator passionate about modern web technologies and IoT,
+                        building scalable applications, and creating clean, reliable, and
+                        user-friendly digital experiences.
                     </p>
-                    <a href="#" className="text-yellow-500 flex items-center group content-item">
+                    <Link to="/profile" className="text-yellow-500 flex items-center group content-item">
                         My Profile
-                        <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
-                    </a>
+                        <span className="ml-2 transition-transform group-hover:translate-x-1">
+                            <FaArrowRight />
+                        </span>
+                    </Link>
                 </div>
             </div>
         </section>

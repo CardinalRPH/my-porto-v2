@@ -1,4 +1,4 @@
-import type { CoreType } from "../types/dataTypes";
+import type { CoreType } from "../../types/dataTypes";
 
 const StatsCard = ({ desc, title }: CoreType) => {
     return (

@@ -1,10 +1,13 @@
 // src/components/Header.tsx
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Import ikon untuk menu
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   // State untuk mengontrol visibilitas sidebar (true = terbuka)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation()
+  const navigate = useNavigate()
 
   // Fungsi untuk menutup/membuka menu
   const toggleMenu = () => {
@@ -13,17 +16,46 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Services', href: '#services' },
+    { name: 'Tech', href: '#tech' },
     { name: 'Works', href: '#works' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Journey', href: '#journey' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Mencegah perilaku default tautan
+    const targetId = e.currentTarget.getAttribute('href'); // Dapatkan '#id'
+
+    if (!targetId || targetId === '#') return;
+
+    if (location.pathname !== "/") {
+      navigate(`/${targetId}`)
+    } else {
+      // Dapatkan elemen target (misalnya, elemen dengan id="services")
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth', // Kunci untuk smooth scroll
+          block: 'start',      // Rata atas
+        });
+      }
+
+      // Tutup menu mobile setelah klik (hanya jika menu terbuka)
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    }
+
+  };
 
   return (
     <header className="py-6 px-4 sm:px-6 lg:px-8 bg-zinc-700 sticky top-0 z-50">
       <div className="container mx-auto flex justify-end items-center">
-        
+
         {/* Tombol Hamburger (Hanya Tampil di Mobile) */}
-        <button 
-          className={`sm:hidden text-white text-xl p-2 z-60 ${isMenuOpen ?  'opacity-0 pointer-events-none':'opacity-100'}`}
+        <button
+          className={`sm:hidden text-white text-xl p-2 z-60 ${isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -33,10 +65,11 @@ const Header: React.FC = () => {
         {/* 1. Navigasi Desktop (Tetap Sama) */}
         <nav className="space-x-8 hidden sm:flex">
           {navItems.map((item) => (
-            <a 
+            <a
               key={item.name}
-              href={item.href} 
+              href={item.href}
               className="text-white opacity-80 hover:opacity-100 transition duration-300 font-medium"
+              onClick={handleScroll}
             >
               {item.name}
             </a>
@@ -45,23 +78,23 @@ const Header: React.FC = () => {
       </div>
 
       {/* 2. Sidebar Mobile */}
-      
+
       {/* Overlay Gelap (Hanya Muncul saat menu terbuka) */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={toggleMenu} // Tutup menu saat klik overlay
         aria-hidden={!isMenuOpen}
       />
 
       {/* Panel Sidebar Sesungguhnya */}
-      <div 
+      <div
         className={`fixed top-0 right-0 w-64 h-full bg-zinc-900 shadow-2xl z-50 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="p-6">
-          
+
           {/* Tombol Tutup Sidebar */}
           <div className="flex justify-end mb-10">
-            <button 
+            <button
               className="text-white text-xl p-2"
               onClick={toggleMenu}
               aria-label="Close menu"
@@ -69,25 +102,25 @@ const Header: React.FC = () => {
               <FaTimes />
             </button>
           </div>
-          
+
           {/* Daftar Navigasi Mobile */}
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <a 
+              <a
                 key={item.name}
-                href={item.href} 
+                href={item.href}
                 className="text-white text-xl font-semibold p-2 hover:text-yellow-500 transition duration-300 border-b border-gray-700"
-                onClick={toggleMenu} // Tutup setelah navigasi
+                onClick={handleScroll} // Tutup setelah navigasi
               >
                 {item.name}
               </a>
             ))}
-            
+
             {/* CTA/Kontak di Sidebar */}
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="mt-6 text-yellow-500 text-lg font-bold p-2 hover:text-white transition duration-300"
-              onClick={toggleMenu}
+              onClick={handleScroll}
             >
               Contact Me →
             </a>

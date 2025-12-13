@@ -1,4 +1,4 @@
-import type { TechStackType } from "../types/dataTypes";
+import type { TechStackType } from "../../types/dataTypes";
 
 type SkillBadgeType = TechStackType & {
     className?: string

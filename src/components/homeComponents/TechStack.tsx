@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-import type { TechStackType } from "../types/dataTypes";
+import type { TechStackType } from "../../types/dataTypes";
 import SubTitle from "./SubTitle";
 import { SkillBadge } from "./TechBadge";
 
@@ -65,7 +65,7 @@ const TechStack = ({ data }: { data: TechStackType[] }) => {
     }, [data.length]);
 
     return (
-        <section ref={sectionRef} className="bg-zinc-700 py-16">
+        <section ref={sectionRef} className="bg-zinc-700 py-16" id="tech">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 

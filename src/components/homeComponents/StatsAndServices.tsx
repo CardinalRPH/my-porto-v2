@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import SubTitle from './SubTitle';
-import mainData from '../data/mainData';
+import mainData from '../../data/mainData';
 import StatsCard from './StatsCard';
+import { FaArrowRight } from 'react-icons/fa';
 
 const StatsAndServices: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -46,7 +47,7 @@ const StatsAndServices: React.FC = () => {
       }
     });
 
-    const statData = [1, 3, 6]; 
+    const statData = [1, 3, 6];
 
     statNumbers.forEach((stat, index) => {
       const targetValue = statData[index];
@@ -63,7 +64,7 @@ const StatsAndServices: React.FC = () => {
         },
         onUpdate: function () {
 
-          const valueHolder = { value: 0 }; 
+          const valueHolder = { value: 0 };
 
           gsap.to(valueHolder, {
             value: targetValue,
@@ -86,7 +87,7 @@ const StatsAndServices: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-zinc-800 py-16">
+    <section ref={sectionRef} className="bg-zinc-800 py-16" id='services'>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === Top Section: Experience & Statistics === */}
@@ -108,7 +109,9 @@ const StatsAndServices: React.FC = () => {
 
             <a href="#" className="text-yellow-500 flex items-center group font-medium mt-6 left-col-item">
               Download CV
-              <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-2 transition-transform group-hover:translate-x-1">
+                <FaArrowRight />
+              </span>
             </a>
           </div>
 
@@ -119,7 +122,10 @@ const StatsAndServices: React.FC = () => {
             </h3>
 
             <p className="text-gray-400 text-sm mb-6 right-col-item">
-              I focus on building reliable, high-performance web solutions while ensuring the underlying infrastructure remains secure and efficient, guaranteeing scalability from code to deployment.
+              My work spans the full stack, from IoT and hardware-level integration to secure
+              infrastructure management, building efficient back-end APIs, and crafting
+              engaging front-end experiences. This end-to-end approach ensures scalable,
+              robust, and well-managed solutions.
             </p>
 
             {/* Container Stats */}
