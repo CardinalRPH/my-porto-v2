@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Import ikon untuk menu
 import { useLocation, useNavigate } from 'react-router-dom';
+import logo from "../assets/logo-01.png"
 
 const Header: React.FC = () => {
   // State untuk mengontrol visibilitas sidebar (true = terbuka)
@@ -51,7 +52,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="py-6 px-4 sm:px-6 lg:px-8 bg-zinc-700 sticky top-0 z-50">
-      <div className="container mx-auto flex justify-end items-center">
+      <div className="container mx-auto flex flex-row-reverse md:flex-row justify-between items-center">
 
         {/* Tombol Hamburger (Hanya Tampil di Mobile) */}
         <button
@@ -61,6 +62,13 @@ const Header: React.FC = () => {
         >
           <FaBars />
         </button>
+
+        <img
+          src={logo}
+          alt="Logo"
+          // Ganti w-8 h-8 sm:w-10 sm:h-10 menjadi w-12 h-12 sm:w-16 sm:h-16
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain z-60"
+        />
 
         {/* 1. Navigasi Desktop (Tetap Sama) */}
         <nav className="space-x-8 hidden sm:flex">

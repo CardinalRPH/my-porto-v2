@@ -51,24 +51,6 @@ const CtaFooterSection = ({ onSubmit, errors, register, email }: { onSubmit: For
       }
     });
 
-    // --- 3. ANIMASI FOOTER BAWAH ---
-    const footerBottom = section.querySelector('.footer-bottom');
-
-    // Pre-set footer bawah
-    gsap.set(footerBottom, { opacity: 0, y: 20 });
-
-    gsap.to(footerBottom, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power1.out',
-      scrollTrigger: {
-        trigger: footerBottom,
-        start: "top 95%",
-        toggleActions: "play none none none"
-      }
-    });
-
   }, []);
 
   return (

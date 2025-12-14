@@ -8,6 +8,8 @@ import permatasq1 from "../assets/projects/permata-sq1.jpg"
 import cropsq2 from "../assets/projects/crop-sq2.jpg"
 import verticalGsq3 from "../assets/projects/smart-vertical-garden-sq3.jpg"
 import presensisq4 from "../assets/projects/presensi-asisten-sq4.jpg"
+import profileImg1 from "../assets/profile.png"
+import profileImg2 from "../assets/profilev2.png"
 
 const mainData = {
     core: [
@@ -229,7 +231,8 @@ const mainData = {
         description: "Web Administrator with a computer science background, experienced in managing enterprise web systems, CI/CD pipelines (Jenkins–Maven), Java-based deployments, and IoT-driven solutions, with prior full-stack experience building scalable APIs, responsive web applications, and real-time systems.",
         from: "Jakarta, Indonesia",
         email: "rayhanfebriyan62@gmail.com",
-        profileImage: "/path/to/your/profile-photo.jpg",
+        profileImage1: profileImg1,
+        profileImage2: profileImg2,
         social: {
             instagram: "https://www.instagram.com/_reean",
             github: "https://github.com/CardinalRPH",

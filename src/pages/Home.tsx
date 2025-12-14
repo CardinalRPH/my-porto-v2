@@ -24,8 +24,6 @@ const Home = () => {
     })
 
     useEffect(() => {
-        console.log(location.hash);
-
         if (!location.hash) return
 
         const target = document.querySelector(location.hash)
@@ -39,7 +37,6 @@ const Home = () => {
 
     const submitForm = async (data: DataFormProps) => {
         try {
-            console.log(data)
             await sendEmail(data)
             setModalStatus("success")
             setModalOpen(true)
@@ -58,7 +55,7 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-zinc-700 text-white font-sans">
             <main className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Hero name={mainData.profile.name} socialHub={mainData.profile.social} />
+                <Hero name={mainData.profile.name} socialHub={mainData.profile.social} profileImg1={mainData.profile.profileImage1} profileImg2={mainData.profile.profileImage2} />
             </main>
 
             <StatsAndServices coreData={mainData.core} />

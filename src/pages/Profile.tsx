@@ -77,9 +77,9 @@ const Profile: React.FC = () => {
                     </div>
                     <div className="md:col-span-1 order-1 md:order-2 flex flex-col items-center md:items-end justify-center">
                         <img
-                            src={mainData.profile.profileImage}
+                            src={mainData.profile.profileImage2}
                             alt={`Profile of ${mainData.profile.name}`}
-                            className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full mb-8 border-4 border-yellow-500 shadow-xl profile-photo"
+                            className="w-48 h-48 md:w-64 md:h-64 object-cover object-top rounded-full mb-8 border-4 border-yellow-500 shadow-xl profile-photo"
                         />
                         <div className="flex space-x-6 profile-header-text">
                             <SocialIcon Icon={FaInstagram} href={mainData.profile.social.instagram} color="text-pink-500" />
