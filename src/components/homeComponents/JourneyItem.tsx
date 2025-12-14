@@ -1,13 +1,10 @@
 import React from 'react';
+import type { CompanyType } from '../../types/dataTypes';
 
 // Antarmuka (Interface) untuk data perjalanan profesional
-interface JourneyItemProps {
-    startDate: string;
-    endDate: string;
-    company: string;
-    role: string;
-    summary: string;
-    className?: string; // TAMBAHKAN INI
+
+type JourneyItemProps = CompanyType & {
+     className?: string; // TAMBAHKAN INI
 }
 
 const JourneyItem: React.FC<JourneyItemProps> = ({ startDate, endDate, company, role, summary, className }) => {

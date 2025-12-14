@@ -107,7 +107,7 @@ const StatsAndServices = ({ coreData }: { coreData: CoreType[] }) => {
               ))}
             </div>
 
-            <a href="#" className="text-yellow-500 flex items-center group font-medium mt-6 left-col-item">
+            <a href={`${import.meta.env.BASE_URL}/cv/rayhan-febriyan-saputra-cv.pdf`} className="text-yellow-500 flex items-center group font-medium mt-6 left-col-item">
               Download CV
               <span className="ml-2 transition-transform group-hover:translate-x-1">
                 <FaArrowRight />

@@ -27,3 +27,11 @@ export type SocialType = {
     github: string
     linkedin: string
 }
+
+export type CompanyType = {
+    startDate: string
+    endDate: string
+    company: string
+    role: string
+    summary: string
+}

@@ -62,7 +62,7 @@ const Home = () => {
             <TechStack data={mainData.techStack} />
             <PortfolioSection projectData={mainData.project} />
 
-            <Journey />
+            <Journey company={mainData.journey} />
 
             {/* Tambahkan CTA / Footer Section di sini */}
             <CtaFooterSection errors={errors} onSubmit={handleSubmit(submitForm)} register={register} email={mainData.profile.email} />

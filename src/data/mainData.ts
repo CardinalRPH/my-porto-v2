@@ -207,7 +207,7 @@ const mainData = {
         {
             startDate: 'Dec 2024',
             endDate: 'Present',
-            company: 'HSBC',
+            company: 'HSBC Indonesia',
             role: 'Web Administrator',
             summary: 'Focused on web system administration and operational reliability within a secure banking environment.'
         },

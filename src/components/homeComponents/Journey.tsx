@@ -1,11 +1,11 @@
 // src/components/BlogAndTestimonial.tsx (Diubah menjadi Journey.tsx)
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import JourneyItem from './JourneyItem';
 import SubTitle from './SubTitle';
-import mainData from '../../data/mainData';
+import type { CompanyType } from '../../types/dataTypes';
 
-const Journey: React.FC = () => {
+const Journey = ({ company }: { company: CompanyType[] }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const Journey: React.FC = () => {
 
             {/* Daftar Item Perjalanan - Tambahkan class untuk trigger item list */}
             <div className="relative pl-14 space-y-6 journey-list">
-              {mainData.journey.map((item, index) => (
+              {company.map((item, index) => (
                 <JourneyItem {...item} key={index} className="journey-item" />
               ))}
             </div>
