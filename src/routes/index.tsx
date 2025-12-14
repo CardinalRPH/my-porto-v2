@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import RootLayout from "../pages/layouts/RootLayout";
+import NotFoundPage from "../pages/NotFound";
 
-const AppRouter = createBrowserRouter([
+const AppRouter = createHashRouter([
     {
         element: <RootLayout />,
         children: [
@@ -17,6 +18,10 @@ const AppRouter = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "*",
+        element: <NotFoundPage />
+    }
 ])
 
 export default AppRouter
