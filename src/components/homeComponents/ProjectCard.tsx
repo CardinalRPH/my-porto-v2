@@ -1,7 +1,7 @@
 // src/components/ProjectCard.tsx (MODIFIED with Hover Effect)
 import React from 'react';
 import type { ProjectCardProps } from "../../types/dataTypes";
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 // Komponen untuk setiap Kartu Proyek
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -11,7 +11,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     className,
     imageStyle,
     imgageURI,
-    projectLink // Prop baru
+    projectLink,
+    repoLink
 }) => {
     return (
         // Wrapper Utama: Tambahkan class 'group' untuk mengontrol hover state
@@ -19,21 +20,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
             {/* === 1. Overlay Blur & Button Container (Hanya Muncul saat Hover) === */}
             <div
-                className="absolute inset-0 z-20 flex items-center justify-center 
+                className="absolute inset-0 z-20 space-x-5 flex items-center justify-center 
                            bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 
                            group-hover:opacity-100"
             >
                 {/* Tombol Menuju Link */}
-                <a
-                    href={projectLink} // Gunakan link tujuan
-                    target="_blank" // Buka di tab baru
-                    rel="noopener noreferrer"
-                    className="p-3 text-lg font-semibold text-white bg-yellow-600 rounded-full 
+                {projectLink && (
+                    <a
+                        href={projectLink} // Gunakan link tujuan
+                        target="_blank" // Buka di tab baru
+                        rel="noopener noreferrer"
+                        className="p-3 text-lg font-semibold text-white bg-yellow-600 rounded-full 
                                hover:bg-yellow-500 transition-colors duration-200 shadow-xl 
                                scale-90 group-hover:scale-100 transform" // Efek skala saat hover
-                >
-                    <FaExternalLinkAlt />
-                </a>
+                    >
+                        <FaExternalLinkAlt />
+                    </a>
+                )}
+                {repoLink && (
+                    <a
+                        href={repoLink} // Gunakan link tujuan
+                        target="_blank" // Buka di tab baru
+                        rel="noopener noreferrer"
+                        className="p-3 text-lg font-semibold text-white bg-yellow-600 rounded-full 
+                               hover:bg-yellow-500 transition-colors duration-200 shadow-xl 
+                               scale-90 group-hover:scale-100 transform" // Efek skala saat hover
+                    >
+                        <FaGithub />
+                    </a>
+                )}
             </div>
 
             {/* === 2. Konten Visual (Di Bawah Overlay) === */}
@@ -65,10 +80,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {/* Placeholder Visual / Gambar Perspektif */}
-            <div className="absolute inset-0 flex items-center justify-center p-4 opacity-50 transition-opacity duration-300 group-hover:opacity-30">
+            <div className="absolute inset-0 flex items-center justify-center p-4 opacity-50 transition-opacity duration-300 group-hover:opacity-30 bg-[#3f3f47]">
                 <div
-                    className="bg-gray-700 w-full h-full transform -rotate-12 scale-150"
-                    style={{ backgroundImage: 'url("path/to/project-screenshot.jpg")', backgroundSize: 'cover' }}
+                    className="bg-[#3f3f47] w-full h-full transform -rotate-12 scale-150 flex justify-center items-center"
                 >
                     <img src={imgageURI} alt={`Screenshot of ${title}`} className={`${imageStyle}`} />
                 </div>

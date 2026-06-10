@@ -94,13 +94,12 @@ const Hero = ({ name, socialHub, profileImg1, profileImg2 }: { name: string, soc
                     <h2 className="text-3xl font-semibold mb-4 content-item">
                         Web Administrator, <br />
                         Fullstack Developer, <br />
-                        and Web Enthusiast, <br />
+                        and IoT Innovator, <br />
                         based in Jakarta.
                     </h2>
                     <p className="text-gray-400 max-w-sm mb-6 content-item">
-                        A Web Developer and Administrator passionate about modern web technologies and IoT,
-                        building scalable applications, and creating clean, reliable, and
-                        user-friendly digital experiences.
+                        A technical-minded Web Developer and Administrator specialized in managing enterprise-grade web environments,
+                        building scalable Full-Stack applications, and engineering reliable IoT-driven solutions.
                     </p>
                     <Link to="/profile" className="text-yellow-500 flex items-center group content-item">
                         My Profile

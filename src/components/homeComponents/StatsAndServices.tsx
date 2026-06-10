@@ -47,7 +47,7 @@ const StatsAndServices = ({ coreData }: { coreData: CoreType[] }) => {
       }
     });
 
-    const statData = [1, 3, 6];
+    const statData = [2, 3, 6];
 
     statNumbers.forEach((stat, index) => {
       const targetValue = statData[index];
@@ -131,7 +131,7 @@ const StatsAndServices = ({ coreData }: { coreData: CoreType[] }) => {
             {/* Container Stats */}
             <div className="flex justify-around mt-6 stats-container">
               <div className='text-center'>
-                <span className="text-5xl font-bold text-yellow-500 stat-number">1+</span>
+                <span className="text-5xl font-bold text-yellow-500 stat-number">2+</span>
                 <p className="text-gray-400 text-sm mt-1 right-col-item">Years experience</p>
               </div>
               <div className='text-center'>

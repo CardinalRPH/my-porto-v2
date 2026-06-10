@@ -19,7 +19,8 @@ export type ProjectCardProps = {
     className: string;
     imageStyle?: React.CSSProperties;
     imgageURI?: string
-    projectLink: string
+    projectLink?: string
+    repoLink?: string
 }
 
 export type SocialType = {
