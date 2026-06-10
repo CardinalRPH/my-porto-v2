@@ -98,7 +98,7 @@ const StatsAndServices = ({ coreData }: { coreData: CoreType[] }) => {
             <SubTitle className="left-col-item">Core Expertise</SubTitle>
             <h2 className="text-4xl font-extrabold leading-snug mb-4 left-col-item">
               A Versatile Developer <br />
-              Across Four Key Stacks.
+              Across Three Key Stacks.
             </h2>
 
             <div className="space-y-6 text-gray-300">
